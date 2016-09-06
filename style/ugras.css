@@ -1,0 +1,208 @@
+/*
+column {
+	border: 1px dotted gray;
+}
+*/
+
+body, textarea, h3, pre {
+	background-color: black;
+	color: #bababa;
+	font-family: verdana;
+}
+
+a {
+	color: #bbaa77;
+	text-decoration: none;
+}
+
+a:hover {
+	cursor: pointer;
+	cursor: hand;
+	color: #ebdaa7;
+}
+
+.clickable {
+	cursor: pointer;
+	cursor: hand;
+}
+
+pre {
+	padding: 0px;
+}
+
+audio {
+	width: 100%;
+}
+
+.mainmenu {
+	margin-top: 20px;
+	font-size: 1.8em;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.content-sections {
+	width: 90%;
+	margin: auto;
+}
+
+.content-sections h2 {
+	margin: 50px 0px 30px 0px;
+	font-weight: normal;
+	color: #bbaa77;
+	border-bottom: 1px dashed #333333;
+}
+
+.content-sections > div {
+	padding-top: 5px;
+}
+
+.loaded-content {
+	background-color: #333333;
+}
+
+.concert {	
+	padding: 5px;
+	border-radius: 3px;
+	border: 1px solid #222222;
+}
+
+.songlist {	
+	min-height: 30px;
+	padding: 2px 10%;
+	border-radius: 3px;
+	border: 1px solid #222222;
+	cursor: pointer;
+	cursor: hand;
+	white-space: nowrap;
+	color: #bbaa77;
+}
+
+.songlist:hover {
+	background-color: #333333;
+}
+
+.cover-image {
+	height: 320px;
+	float: left;
+	margin: 5px 35px;
+}
+
+.song {
+	width: 380px;
+	float: left;
+	margin: 5px;
+	padding: 10px;
+	border: 1px solid #222222;
+}
+
+.clear {
+	clear:both;
+}
+
+.song-collapsed {
+	height: 155px;
+	overflow: hidden;
+}
+
+.expand-control {
+	float:right;
+}
+
+.future {
+	background-color: #253025;
+}
+
+.past {
+	background-color: #302525;
+}
+.past b:first-child {
+	font-weight: normal;
+	color: #AAAAAA;
+	/*text-decoration: line-through;*/
+}
+
+.nextConvert {
+	border-top: 3px;
+}
+
+.lyrics {
+	padding: 0px;
+	/*max-height: 300px;*/
+	/*overflow: hidden;*/
+}
+
+.player-button {
+	padding: 6px 10px;
+	background-color: #282828;
+	/* background-color: rgba(50,50,50,0.8); */
+}
+
+.player-button .fa {
+	color: #bbaa77;
+}
+
+.player-button:hover {
+	cursor: pointer;
+}
+
+.player-button:hover .fa {
+	color: #ffeebb;
+}
+
+.music-player {
+	position: fixed;
+	z-index: 100; 
+	bottom: 0; 
+	left: 0;
+	margin-bottom: 0;
+	min-width: 465px;
+	background-color: rgba(50,50,50,0.8);
+	border-width: 1px 1px 0px 0px;
+	border-style: solid;
+	border-color: #202020;
+	border-top-right-radius: 8px;
+}
+
+.music-player .player-button {
+	float: left;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	border-style: solid;
+	border-right-width: 1px;
+	border-color: #202020;
+	font-size: 1.2em;
+	background-color: unset;
+}
+
+.music-player .player-button:first-child {
+	border-left-width: 1px;
+}
+
+.music-player .player-soundcloud-logo {
+	padding: 11px 0px 0px 11px;
+	float: left;
+	opacity: 0.6;
+}
+
+.music-player .player-song-title {
+	width: 145px;
+	font-size: .9em;
+	font-weight: bold;
+	text-align: center;
+	padding: 7px 7px 0px 7px;
+	float: left;
+	white-space: nowrap;
+}
+
+.contacts tr {
+	border-width: 1px 0px;
+    border-style: solid;
+	border-color: #202020;
+}
+
+.contacts caption {
+	color: inherit;
+	margin-bottom: 5px;
+}

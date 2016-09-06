@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ugras</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="style/kube/css/kube.min.css" />
+	<link rel="stylesheet" href="style/ugras.css" />
+	<link rel="stylesheet" href="style/font-awesome-4.4.0/css/font-awesome.min.css" />
+	<!-- Piwik -->
+	<script type="text/javascript">
+		var _paq = _paq || [];
+		_paq.push(["setDomains", ["*.ugras.no"]]);
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		(function() {
+			var u="//statistikk.ugras.no/";
+			_paq.push(['setTrackerUrl', u+'piwik.php']);
+			_paq.push(['setSiteId', 2]);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		})();
+	</script>
+	<noscript><p><img src="//statistikk.ugras.no/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+	<!-- End Piwik Code -->
+</head>
+<body>
+	
+	<row id="page-top" class="mainmenu">
+		<column cols="3"><a href="#konsertar">KONSERTAR</a></column>
+		<column cols="3"><a href="#musikk">MUSIKKEN</a></column>
+		<column cols="3"><a href="#om-ugras">OM UGRAS</a></column>
+		<column cols="3"><a href="#kontakt">KONTAKT</a></column>
+	</row>
+	
+	<img src="images/design/ugras_i_enga.jpg" alt="Ugras i enga" />
+	
+	<div class="content-sections">
+		
+		<concerts></concerts>
+		
+		<music></music>
+		
+		<about></about>
+		
+		<contact></contact>
+		
+	</div>
+
+	<bottominfo></bottominfo>
+	
+	<script type="text/html-template" id="concerts">
+		<div id="konsertar">
+			<a href="#konsertar"><h2>Konsertar</h2></a>
+			<!--
+				<div v-if="nextConcert">
+					<p>Neste: {{ nextConcert.name }} om {{ timeToConcert(nextConcert) }} dagar</p>
+				</div>
+			-->
+			    <!-- href="#konsert-{{ nextConcert.date }}" -->
+				<a v-if="listIsLimited" @click="unlimitList()">
+					<span class="fa fa-plus-square-o" title="Vis også spelte konsertar"></span> <small>Vis også spelte konsertar</small>
+				</a>
+				<a v-else href="#konsertar" @click="limitList()">
+					<span class="fa fa-minus-square-o" title="Vis berre komande"></span> <small>Vis berre komande konsertar</small>
+				</a>
+
+				<concert v-for="concert in concertList" v-bind:concert="concert"></concert>
+			    
+			    <!-- href="#konsert-{{ nextConcert.date }}" -->
+				<a v-if="listIsLimited" @click="unlimitList()">
+					<span class="fa fa-plus-square-o" title="Vis også spelte konsertar"></span> <small>Vis også spelte konsertar</small>
+				</a>
+				<a v-else href="#konsertar" @click="limitList()">
+					<span class="fa fa-minus-square-o" title="Vis berre komande"></span> <small>Vis berre komande konsertar</small>
+				</a>
+			<totoplink />
+		</div>
+	</script>
+
+	<script type="text/html-template" id="concert">
+		<row id="konsert-{{ concert.date }}" class="concert" v-bind:class="isPast() ? 'past' : 'future'" v-bind:class="{ 'nextConcert' : isNext() }" end>
+			<column cols="12">
+			<row @click="toggleShowMore()" class="clickable" v-bind:class="{ 'end': !showMore }">
+				<column cols="1">{{ formattedDate }}</column>
+				<column cols="9"><b>{{ concert.name }}</b>
+				<!--<span v-show="isNext()" class="label label-success" outline bold>Neste</span>-->
+			</column>
+			<column cols="1">
+			<i v-show="concert.images" class="fa fa-camera" title="Bilete"></i>
+			<i v-show="concert.videos" class="fa fa-video-camera" title="Video"></i>
+		</column>
+		<column cols="1">
+		<a v-if="showMore"><small>Lat att</small> <span class="fa fa-angle-double-up" title="Lat att"></span></a>
+		<a v-if="concert.info && !showMore"><small>Meir</small> <span class="fa fa-angle-double-down" title="Vis meir"></span></a>
+	</column>
+</row>
+<row v-show="showMore">
+	<column cols="12">
+	<row>
+		<column cols="12">
+		{{ concert.info }}
+		<small v-if="isPast()"><i>(For {{ timeSinceConcert() }} dagar sidan)</i></small>
+		<small v-else><i>(Om {{ timeToConcert() }} dagar)</i></small>
+	</column>
+</row>
+<row>
+	<blocks cols="3">
+		<div v-for="image in concert.images">
+			<figure>
+				<img src="{{ image.src }}" alt="{{ image.title }}" title="{{ image.title }}" />
+				<figcaption>
+					<span v-if="image.photographer" class="right">Foto: {{ image.photographer }}</span>
+				</figcaption>
+			</figure>
+		</div>
+	</blocks>
+</row>
+<row v-for="video in concert.videos">
+	<iframe v-if="video.embeddedsrc" width="560" height="315" src="{{ video.embeddedsrc }}" frameborder="0" allowfullscreen></iframe>
+	<video v-if="!video.embeddedsrc" width="560" height="315" controls>
+		<source src="{{ video.src }}" type="video/ogg">
+			Videoen kunne ikkje spelast av.
+		</video> 
+	</row>
+	<row v-for="link in concert.links">
+		<a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+	</row>
+</column>
+</row>
+</column>
+</row>
+</script>
+
+<script type="text/html-template" id="music">
+	<div id="musikk">
+		<a href="#musikk"><h2 class="section-heading">Musikken</h2></a>
+		<img src="images/design/ugras-albumcover_400.png" alt="Ugras albumomslag" title="Ugras albumomslag" class="cover-image">
+		<song v-for="song in songs" v-bind:song="song"></song>
+		<div class="clear"></div>
+		<musicplayer v-if="$root.scIsAccessable()" />
+		<totoplink />
+	</div>
+</script>
+
+<script type="text/html-template" id="song">
+	<div class="song" v-bind:class="{'song-collapsed': !showMore}">
+		<span @click="toggleShowMore()" class="clickable expand-control">
+			<a v-if="showMore"><small>Lat att</small> <span class="fa fa-angle-double-up" title="Lat att"></span></a>
+			<a v-if="song.lyrics && !showMore"><small>Meir</small> <span class="fa fa-angle-double-down" title="Vis meir"></span></a>
+		</span>
+		<small @click="startInPlayer(song)"
+		class="player-button"
+		title="Start {{ song.title }} i musikkspelaren"
+		style="float:right; margin-right:15px">
+		<span class="fa fa-play"></span>
+	</small>
+	<h3>{{ song.title }}</h3>
+	<small v-if="song.lyricsBy">Tekst: {{ song.lyricsBy }}</small><br />
+	<small>Musikk: {{ song.musicBy }}</small>
+	<pre class="lyrics"><i>{{ song.lyrics }}</i></pre>
+	<span @click="toggleShowMore()" class="clickable expand-control">
+		<a v-if="showMore"><small>Lat att</small> <span class="fa fa-angle-double-up" title="Lat att"></span></a>
+	</span>
+</div>
+</script>
+
+<script type="text/html-template" id="musicplayer">
+	<div id="music-player" class="music-player">
+		<div class="player-song-title">
+			<small>{{ currentTrackNumber }} </small>{{ currentSong.title }}
+		</div>
+		<div @click="previous()" class="player-button" title="Omatt/Forrige">
+			<span class="fa fa-step-backward"></span>
+		</div>
+		<div @click="backward()" class="player-button" title="- 5 sekundar">
+			<span class="fa fa-backward"></span>
+		</div>
+		<div v-show="!player.isPlaying()" @click="player.play()" class="player-button" title="Spel">
+			<span class="fa fa-play"></span>
+		</div>
+		<div v-show="!player || player.isPlaying()" @click="player.pause()" class="player-button" title="Pause">
+			<span class="fa fa-pause"></span>
+		</div>
+		<div @click="forward()" class="player-button" title="+ 15 sekundar">
+			<span class="fa fa-forward"></span>
+		</div>
+		<div @click="next()" class="player-button" title="Neste">
+			<span class="fa fa-step-forward"></span>
+		</div>
+		<div class="player-soundcloud-logo">
+			<a href="https://soundcloud.com/ugrasband" target="_blank"><img src="images/design/SoundCloud-logo.png" /></a>
+		</div>
+			<!--
+			<column>
+				<progress max="252550" value="{{ player.currentTime() }}"></progress>
+				{{ Math.round(player.currentTime()) }}
+			</column>
+		-->
+	</div>
+</script>
+
+<script type="text/html-template" id="about">
+	<div id="om-ugras">
+		<a href="#om-ugras"><h2>Om Ugras</h2></a>
+		<row>
+			<column cols="6">
+			<p>Ugras er eit band frå Bø i Telemark som med ei utvida bluegrassinstrumentering lagar og framfører låtar inspirert av m.a. tradisjonell amerikansk folkemusikk, country og americana/roots samt norsk/irsk folkemusikk og bluegrass.</p>
+
+			<p>Musikken er fortrinnsvis frisk, livleg og humørfylt, men ikkje utan innslag av sørgmodigheit og melankoli. I alle høve representerer Ugras sine låtar noko ekte, ærleg og jordnært - både når det gjeld tekstar og musikk.</p>
+
+			<p>Konsertar med Ugras er ofte sett saman av eigne og andre sine låtar i same sjangerlandskap. Bandet sine eigne tekstar er skrivne på nynorsk/Bø-dialekt. Bandet er kjend for å skape stor stemning når dei opptrer.</p>
+		</column>
+		<column cols="6">
+		<p>Ugras består av Torstein Askildt: vokal, gitar, mandolin og munnspel; Stian Dalen: dobro, mandolin, gitar og vokal; Jon Solberg: fele, banjo, vokal og munnspel; Jørgen Tellnes: cajòn og vokal; Knut Eirik Hult: bass og vokal; Audun Rørmark: fele og vokal</p>
+
+		<p>Ugras fann tonen hausten 2012 og har sidan då halde mange konsertar på pubar, festivalar og private arrangement. Sommaren 2015 spela dei inn ei plate med 10 låtar. Opptaka blei gjort live og på kort tid i Jon Solberg sitt heimestudio. Resultatet er ei direkte og levande plate, som let akkurat slik Ugras skal.
+			I 2016 blei Ugras forsterka med Audun Rørmark og bandet fekk ny giv og starta ei tid med meir fart på øvingar, låtsnekring og konsertar.</p>
+
+
+			<p>Så kva er Ugras? Jau, som du allereie veit: Friskt og frodig, eigenrådig, tilpasningsdyktig, vilt og vakkert, noko med solide røter og som kan dukke opp når du minst ventar det!</p>
+		</column>
+	</row>
+	<totoplink />
+</div>
+</script>
+
+<script type="text/html-template" id="contact">
+	<div id="kontakt">
+		<a href="#kontakt"><h2>Kontakt</h2></a>
+		<row>
+			<column cols="6">
+			<p>Booking: Stian Dalen <a href="mailto:stian@ugras.no">stian@ugras.no</a> / 97602272</p>
+			<p><a><small v-show="!showAll" v-on:click="showAll=true">Kontakt andre i Ugras</small></a></p>
+		</column>
+		<column cols="6">
+		<table v-show="showAll" class="table-flat contacts">
+			<caption>Alle i Ugras <a v-on:click="showAll=false" class="right fa fa-times clickable"></a></caption>
+			<tr>
+				<td>Torstein Askildt</td>
+				<td><a href="mailto:torstein@ugras.no">torstein@ugras.no</a></td>
+				<td>91124815</td>
+			</tr>
+			<tr>
+				<td>Stian Dalen</td>
+				<td><a href="mailto:stian@ugras.no">stian@ugras.no</a></td>
+				<td>97602272</td>
+			</tr>
+			<tr>
+				<td>Knut Eirik Hult</td>
+				<td><a href="mailto:knuteirik@ugras.no">knuteirik@ugras.no</a></td>
+				<td>48254089</td>
+			</tr>
+			<tr>
+				<td>Jørgen Tellnes</td>
+				<td><a href="mailto:jorgen@ugras.no">jorgen@ugras.no</a></td>
+				<td>99352990</td>
+			</tr>
+			<tr>
+				<td>Jon Solberg</td>
+				<td><a href="mailto:jon@ugras.no">jon@ugras.no</a></td>
+				<td>95270637</td>
+			</tr>
+			<tr>
+				<td>Audun Rørmark</td>
+				<td><a href="mailto:audun@ugras.no">audun@ugras.no</a></td>
+				<td>90475205</td>
+			</tr>
+		</table>
+	</column>
+</row>
+<totoplink />
+</div>
+</script>
+
+<script type="text/html-template" id="bottominfo">
+	<div class="text-centered small">Ugras 2012–{{ getCurrentYear() }}</div>
+</script>	
+
+<script type="text/html-template" id="totoplink">
+	<div class="text-right"><a href="#page-top"><small>Til toppen</small> <span class="fa fa-arrow-up"></span></a></div>
+</script>
+
+	<!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+	<script src="js/smoothscroll/smooth-scroll.js"></script>-->
+
+	<script src="js/vue.js"></script>
+	<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+	<script src="js/compatibility.js"></script>
+	<script src="js/ugras-resources.js"></script>
+	<script src="js/ugras.js"></script>
+
+</body>
+</html>
+
+<!-- <pre>{{ $data | json }}</pre> -->
