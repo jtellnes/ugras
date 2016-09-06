@@ -6,6 +6,8 @@ var ugrasConcerts = [
 			 { title: 'Spydeberg Rock Festival', url: "http://spydebergrock.no/" },
 		], },
 	*/
+    { date: '2016-09-24', name: 'Grendelagsfest, Oterholt grendelag' },
+	{ date: '2016-09-23', name: 'Turbotråkk, Evjudalen' },
 	{ date: '2016-08-20', name: 'Telemarkfestivalen, Sandvin', info: 'Ugras spelar på laurdagen, før Hayseed Dixie. Parkscenen' },
 	{ date: '2016-08-19', name: 'Telemarkfestivalen, Pizzafjoset', info: 'Folkemusikkpub med dans på Pizzafjoset' },
 	{ date: '2016-08-19', name: 'Telemarkfestivalen, Bøsenteret', info: 'Kl. 12.00. Ugras spelar nokre låtar på Bøsenteret' },
