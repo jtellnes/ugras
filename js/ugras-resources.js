@@ -1,11 +1,13 @@
 
 var ugrasConcerts = [
-	/* *** Kan offentleggjerast 01.01.17 ***
-	{ date: '2017-05-26', name: 'Spydeberg Rock Festival (26.05 eller 27.05)', info: 'Ugras spelar på Spydeberg Rock Festival',
+	{ date: '2017-05-27', name: 'Spydeberg Rock Festival', info: 'Ugras spelar på Spydeberg Rock Festival',
 	links: [
 			 { title: 'Spydeberg Rock Festival', url: "http://spydebergrock.no/" },
 		], },
-	*/
+	{ date: '2016-10-08', name: 'Nyopning av Gullbring kulturanlegg', info: 'Ugras spelar på nyopning av Gullbring kulturanlegg',
+	links: [
+			 { title: 'Gullbring', url: "http://gullbring.no/" },
+	], },
     { date: '2016-09-24', name: 'Grendelagsfest, Oterholt grendelag' },
 	{ date: '2016-09-23', name: 'Turbotråkk, Evjudalen' },
 	{ date: '2016-08-20', name: 'Telemarkfestivalen, Sandvin', info: 'Ugras spelar på laurdagen, før Hayseed Dixie. Parkscenen' },
