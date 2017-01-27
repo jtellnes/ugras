@@ -1,14 +1,19 @@
 
 var ugrasConcerts = [
+	{ date: '2017-07-28', name: 'TBA'},
+	{ date: '2017-06-30', name: 'TBA'},
 	{ date: '2017-05-27', name: 'Spydeberg Rock Festival', info: 'Ugras spelar på Spydeberg Rock Festival',
 	links: [
 			 { title: 'Spydeberg Rock Festival', url: "http://spydebergrock.no/" },
 		], },
+	{ date: '2017-04-01', name: 'Privat arrangement, Bø' },
+	{ date: '2017-02-25', name: 'Afterski i Vinterland, Lifjell', info: 'Ugras spelar i kaféen ved alpinanlegget i Vinterland frå ca. kl. 18:00.' },
+	{ date: '2017-02-12', name: 'Solidaritetsmarkering, Bø torg', info: 'Ugras spelar eit par låtar i 18-tida.' },
+	{ date: '2016-09-24', name: 'Grendelagsfest, Oterholt grendelag' },
 	{ date: '2016-10-08', name: 'Nyopning av Gullbring kulturanlegg', info: 'Ugras spelar på nyopning av Gullbring kulturanlegg',
 	links: [
 			 { title: 'Gullbring', url: "http://gullbring.no/" },
 	], },
-    { date: '2016-09-24', name: 'Grendelagsfest, Oterholt grendelag' },
 	{ date: '2016-09-23', name: 'Turbotråkk, Evjudalen' },
 	{ date: '2016-08-20', name: 'Telemarkfestivalen, Sandvin', info: 'Ugras spelar på laurdagen, før Hayseed Dixie. Parkscenen' },
 	{ date: '2016-08-19', name: 'Telemarkfestivalen, Pizzafjoset', info: 'Folkemusikkpub med dans på Pizzafjoset' },
