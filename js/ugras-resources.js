@@ -1,7 +1,6 @@
 
 var ugrasConcerts = [
 	{ date: '2017-07-28', name: 'TBA'},
-	{ date: '2017-06-30', name: 'TBA'},
 	{ date: '2017-05-27', name: 'Spydeberg Rock Festival', info: 'Ugras spelar på Spydeberg Rock Festival',
 	links: [
 			 { title: 'Spydeberg Rock Festival', url: "http://spydebergrock.no/" },
