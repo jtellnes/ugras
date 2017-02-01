@@ -7,7 +7,7 @@ var ugrasConcerts = [
 		], },
 	{ date: '2017-04-01', name: 'Privat arrangement, Bø' },
 	{ date: '2017-02-25', name: 'Afterski i Vinterland, Lifjell', info: 'Ugras spelar i kaféen ved alpinanlegget i Vinterland frå ca. kl. 18:00.' },
-	{ date: '2017-02-12', name: 'Solidaritetsmarkering, Bø torg', info: 'Ugras spelar eit par låtar under markeringa som startar kl. 17:30' },
+	{ date: '2017-02-16', name: 'Solidaritetsmarkering, Bø torg', info: 'Ugras spelar eit par låtar under markeringa som startar kl. 17:30' },
 	{ date: '2016-09-24', name: 'Grendelagsfest, Oterholt grendelag' },
 	{ date: '2016-10-08', name: 'Nyopning av Gullbring kulturanlegg', info: 'Ugras spelar på nyopning av Gullbring kulturanlegg',
 	links: [
