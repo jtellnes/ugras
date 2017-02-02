@@ -41,6 +41,11 @@ audio {
 	text-align: center;
 }
 
+.headerimage {
+	width: 80%;
+	margin: auto;
+}
+
 .content-sections {
 	width: 90%;
 	margin: auto;
