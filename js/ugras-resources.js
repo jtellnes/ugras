@@ -1,6 +1,7 @@
 
 var ugrasConcerts = [
-	{ date: '2017-07-28', name: 'Countryfestivalen i Seljord (datoen er ubekrefta)', info: "Ugras spelar på Countryfestivalen i Seljord ein av festivaldagane, 26.-30. juli",
+	{ date: '2017-03-25', name: 'Privat arrangement, Holmenkollen' },
+	{ date: '2017-07-28', name: 'Countryfestivalen i Seljord', info: "Ugras spelar på Countryfestivalen i Seljord, fredag 28. juli kl. 18:40 på Caféscenen",
 	  links: [ { title: 'Les meir på countryfestivalen.no', url: "http://countryfestivalen.no/" }, ], },
 	{ date: '2017-06-10', name: 'TBA'},
 	{ date: '2017-05-27', name: 'Spydeberg Rock Festival', info: 'Ugras spelar på Spydeberg Rock Festival',
