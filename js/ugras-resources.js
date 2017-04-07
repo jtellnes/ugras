@@ -1,7 +1,6 @@
 
 var ugrasConcerts = [
 	{ date: '2017-08-19', name: 'Langesund bluegrassfestival'},
-	{ date: '2017-03-25', name: 'Privat arrangement, Holmenkollen' },
 	{ date: '2017-07-28', name: 'Countryfestivalen i Seljord', info: "Ugras spelar på Countryfestivalen i Seljord, fredag 28. juli kl. 18:40 på Caféscenen",
 	  links: [ { title: 'Les meir på countryfestivalen.no', url: "http://countryfestivalen.no/" }, ], },
 	{ date: '2017-05-27', name: 'Spydeberg Rock Festival', info: 'Ugras spelar på Spydeberg Rock Festival',
@@ -9,6 +8,7 @@ var ugrasConcerts = [
 			 { title: 'Spydeberg Rock Festival', url: "http://spydebergrock.no/" },
 		], },
 	{ date: '2017-04-01', name: 'Privat arrangement, Bø' },
+	{ date: '2017-03-25', name: 'Privat arrangement, Holmenkollen' },
 	{ date: '2017-02-25', name: 'Afterski i Vinterland, Lifjell', info: 'Ugras spelar i kaféen ved alpinanlegget i Vinterland frå ca. kl. 18:00.',
 		links: [
 			 { title: 'Les meir på Lifjell Skisenter sin nettstad', url: "http://lifjell.no/Ski-og-bakke/Aktivitetsprogram-vinterferie-2017" },
