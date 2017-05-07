@@ -1,6 +1,11 @@
 
 var ugrasConcerts = [
-	{ date: '2017-08-19', name: 'Langesund bluegrassfestival'},
+	{ date: '2017-10-28', name: 'Konsert på Bok- og blueshuset, Notodden',
+	  info: "Ugras spelar på Bok- og blueshuset", links: [ { title: 'Les meir på bokogblueshuset.no', url: "http://bokogblueshuset.no/"} ] },
+	//{ date: '2017-09-22', name: 'Turbotråkk, Evjudalen' },
+	{ date: '2017-08-26', name: 'Grendelagsfest, Bø'},
+	{ date: '2017-08-19', name: 'Langesund bluegrassfestival',
+	  info: "Ugras spelar på Langesund bluegrassfestival", links: [ { title: 'Les meir på bluegrassfestival.no', url: "http://www.bluegrassfestival.no/"} ] },
 	{ date: '2017-07-28', name: 'Countryfestivalen i Seljord', info: "Ugras spelar på Countryfestivalen i Seljord, fredag 28. juli kl. 18:40 på Caféscenen",
 	  links: [ { title: 'Les meir på countryfestivalen.no', url: "http://countryfestivalen.no/" }, ], },
 	{ date: '2017-05-27', name: 'Spydeberg Rock Festival', info: 'Ugras spelar på Spydeberg Rock Festival',
