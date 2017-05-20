@@ -83,55 +83,55 @@
 	<script type="text/html-template" id="concert">
 		<row id="konsert-{{ concert.date }}" class="concert" v-bind:class="isPast() ? 'past' : 'future'" v-bind:class="{ 'nextConcert' : isNext() }" end>
 			<column cols="12">
-			<row @click="toggleShowMore()" class="clickable" v-bind:class="{ 'end': !showMore }">
-				<column cols="1">{{ formattedDate }}</column>
-				<column cols="9"><b>{{ concert.name }}</b>
-				<!--<span v-show="isNext()" class="label label-success" outline bold>Neste</span>-->
-			</column>
-			<column cols="1">
-			<i v-show="concert.images" class="fa fa-camera" title="Bilete"></i>
-			<i v-show="concert.videos" class="fa fa-video-camera" title="Video"></i>
+				<row @click="toggleShowMore()" class="clickable" v-bind:class="{ 'end': !showMore }">
+					<column cols="1">{{ formattedDate }}</column>
+					<column cols="9"><b>{{ concert.name }}</b>
+						<!--<span v-show="isNext()" class="label label-success" outline bold>Neste</span>-->
+					</column>
+					<column cols="1">
+						<i v-show="concert.images" class="fa fa-camera" title="Bilete"></i>
+						<i v-show="concert.videos" class="fa fa-video-camera" title="Video"></i>
+					</column>
+					<column cols="1">
+						<a v-if="showMore"><small>Lat att</small> <span class="fa fa-angle-double-up" title="Lat att"></span></a>
+						<a v-if="concert.info && !showMore"><small>Meir</small> <span class="fa fa-angle-double-down" title="Vis meir"></span></a>
+					</column>
+				</row>
+				<row v-show="showMore">
+					<column cols="12">
+						<row>
+							<column cols="12">
+								{{ concert.info }}
+								<small v-if="isPast()"><i>(For {{ timeSinceConcert() }} dagar sidan)</i></small>
+								<small v-else><i>(Om {{ timeToConcert() }} dagar)</i></small>
+							</column>
+						</row>
+					<row>
+						<blocks cols="3">
+							<div v-for="image in concert.images">
+								<figure>
+									<img src="{{ image.src }}" alt="{{ image.title }}" title="{{ image.title }}" />
+									<figcaption>
+										<span v-if="image.photographer" class="right">Foto: {{ image.photographer }}</span>
+									</figcaption>
+								</figure>
+							</div>
+						</blocks>
+					</row>
+					<row v-for="video in concert.videos">
+						<iframe v-if="video.embeddedsrc" width="560" height="315" src="{{ video.embeddedsrc }}" frameborder="0" allowfullscreen></iframe>
+						<video v-if="!video.embeddedsrc" width="560" height="315" controls>
+							<source src="{{ video.src }}" type="video/ogg">
+							Videoen kunne ikkje spelast av.
+						</video> 
+					</row>
+					<row v-for="link in concert.links">
+						<a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+					</row>
+				</column>
+			</row>
 		</column>
-		<column cols="1">
-		<a v-if="showMore"><small>Lat att</small> <span class="fa fa-angle-double-up" title="Lat att"></span></a>
-		<a v-if="concert.info && !showMore"><small>Meir</small> <span class="fa fa-angle-double-down" title="Vis meir"></span></a>
-	</column>
-</row>
-<row v-show="showMore">
-	<column cols="12">
-	<row>
-		<column cols="12">
-		{{ concert.info }}
-		<small v-if="isPast()"><i>(For {{ timeSinceConcert() }} dagar sidan)</i></small>
-		<small v-else><i>(Om {{ timeToConcert() }} dagar)</i></small>
-	</column>
-</row>
-<row>
-	<blocks cols="3">
-		<div v-for="image in concert.images">
-			<figure>
-				<img src="{{ image.src }}" alt="{{ image.title }}" title="{{ image.title }}" />
-				<figcaption>
-					<span v-if="image.photographer" class="right">Foto: {{ image.photographer }}</span>
-				</figcaption>
-			</figure>
-		</div>
-	</blocks>
-</row>
-<row v-for="video in concert.videos">
-	<iframe v-if="video.embeddedsrc" width="560" height="315" src="{{ video.embeddedsrc }}" frameborder="0" allowfullscreen></iframe>
-	<video v-if="!video.embeddedsrc" width="560" height="315" controls>
-		<source src="{{ video.src }}" type="video/ogg">
-			Videoen kunne ikkje spelast av.
-		</video> 
 	</row>
-	<row v-for="link in concert.links">
-		<a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
-	</row>
-</column>
-</row>
-</column>
-</row>
 </script>
 
 <script type="text/html-template" id="music">
