@@ -211,3 +211,8 @@ audio {
 	color: inherit;
 	margin-bottom: 5px;
 }
+
+/* Override kube.css */
+row column[cols] {
+   margin-bottom: 4px;
+}
