@@ -4,7 +4,7 @@ var ugrasConcerts = [
 	  info: "Ugras spelar på Bok- og blueshuset", links: [ { title: 'Les meir på bokogblueshuset.no', url: "http://bokogblueshuset.no/"} ] },
 	{ date: '2017-09-08', name: 'Turbotråkk, Evjudalen',
 	  info: "Eit opplegg for barnehagane i regi av DNT Telemark", links: [ { title: 'telemark.dnt.no', url: "https://telemark.dnt.no/"} ] },
-	{ date: '2017-08-26', name: 'Grendelagsfest, Bø'},
+	{ date: '2017-09-29', name: 'Grendelagsfest, Bø'},
 	{ date: '2017-08-19', name: 'Langesund bluegrassfestival',
 	  info: "Ugras spelar på Langesund bluegrassfestival", links: [ { title: 'Les meir på bluegrassfestival.no', url: "http://www.bluegrassfestival.no/"} ] },
 	{ date: '2017-07-28', name: 'Countryfestivalen i Seljord', info: "Ugras spelar på Countryfestivalen i Seljord, fredag 28. juli kl. 18:40 på Caféscenen",
