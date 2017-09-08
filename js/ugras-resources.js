@@ -1,5 +1,7 @@
 
 var ugrasConcerts = [
+	{ date: '2018-02-16', name: 'TBA'},
+	{ date: '2017-12-27', name: 'TBA'},
 	{ date: '2017-10-28', name: 'Konsert på Bok- og blueshuset, Notodden',
 	  info: "Ugras spelar på Bok- og blueshuset i Notodden, Livescenen kl. 21:00.", links: [ { title: 'Les meir på bokogblueshuset.no', url: "http://bokogblueshuset.no/schedule/ugras/"} ] },
 	{ date: '2017-09-08', name: 'Turbotråkk, Evjudalen',
