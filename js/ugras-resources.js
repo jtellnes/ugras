@@ -1,7 +1,7 @@
 
 var ugrasConcerts = [
 	{ date: '2018-02-16', name: 'TBA'},
-	{ date: '2017-12-27', name: 'TBA'},
+	{ date: '2017-12-26', name: '2. juledag på Bull Inn'},
 	{ date: '2017-11-25', name: 'Opning av nye selskapslokale på Åbø Gård', info: "Ugras spelar på Åbø Gård under innviinga av nye selskapslokale",
 	  links: [ { title: 'www.abogard.no', url: "http://www.abogard.no"}, { title: 'www.facebook.com/aabogaard', url: "https://www.facebook.com/aabogaard/"} ] },
 	{ date: '2017-10-28', name: 'Konsert på Bok- og blueshuset, Notodden',
@@ -9,7 +9,6 @@ var ugrasConcerts = [
 	{ date: '2017-09-08', name: 'Turbotråkk, Evjudalen',
 	  info: "Eit opplegg for barnehagane i regi av DNT Telemark", links: [ { title: 'telemark.dnt.no', url: "https://telemark.dnt.no/"} ] },
 	{ date: '2017-09-30', name: 'Privat arrangement, Lifjell' },
-	{ date: '2017-09-29', name: 'Grendelagsfest, Bø'},
 	{ date: '2017-08-19', name: 'Langesund bluegrassfestival',
 	  info: "Ugras spelar på Langesund bluegrassfestival", links: [ { title: 'Les meir på bluegrassfestival.no', url: "http://www.bluegrassfestival.no/"} ] },
 	{ date: '2017-07-28', name: 'Countryfestivalen i Seljord', info: "Ugras spelar på Countryfestivalen i Seljord, fredag 28. juli kl. 18:40 på Caféscenen",
