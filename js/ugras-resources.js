@@ -1,6 +1,6 @@
 
 var ugrasConcerts = [
-	{ date: '2018-02-24', name: 'Afterski i Vinterland, Lifjell', info: 'Ugras spelar i kaféen ved alpinanlegget i Vinterland,
+	{ date: '2018-02-24', name: 'Afterski i Vinterland, Lifjell', info: 'Ugras spelar i kaféen ved alpinanlegget i Vinterland',
 	links: [
 		 { title: 'Lifjell Skisenter sin nettstad', url: "http://lifjell.no" },
 	], },
