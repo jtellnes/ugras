@@ -1,5 +1,9 @@
 
 var ugrasConcerts = [
+	{ date: '2018-02-24', name: 'Afterski i Vinterland, Lifjell', info: 'Ugras spelar i kaféen ved alpinanlegget i Vinterland,
+	links: [
+		 { title: 'Lifjell Skisenter sin nettstad', url: "http://lifjell.no" },
+	], },
 	{ date: '2017-12-26', name: '2. juledag på Bull Inn'},
 	{ date: '2017-11-25', name: 'Opning av nye selskapslokale på Åbø Gård', info: "Ugras spelar på Åbø Gård under innviinga av nye selskapslokale",
 	  links: [ { title: 'www.abogard.no', url: "http://www.abogard.no"}, { title: 'www.facebook.com/aabogaard', url: "https://www.facebook.com/aabogaard/"} ] },
