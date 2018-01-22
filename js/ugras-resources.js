@@ -2,7 +2,6 @@
 var ugrasConcerts = [
 	{ date: '2018-12-29', name: '5. juledag på Lundevang'},
 	{ date: '2018-06-10', name: 'Konsert på Kvennøya'},
-	{ date: '2018-03-03', name: 'Privat arrangement, Notodden'},
 	{ date: '2018-02-24', name: 'Afterski i Vinterland, Lifjell', info: 'Ugras spelar i kaféen ved alpinanlegget i Vinterland',
 	links: [
 		 { title: 'Lifjell Skisenter sin nettstad', url: "http://lifjell.no" },
