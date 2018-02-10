@@ -1,6 +1,8 @@
 
 var ugrasConcerts = [
 	{ date: '2018-12-29', name: '5. juledag på Lundevang'},
+	{ date: '2018-08-24', name: 'Kartfestivalen 2018 (23/8, 24/8 eller 25/8)'},
+	{ date: '2018-06-30', name: 'Åpen Låve konsertserier, Gjerstad'},
 	{ date: '2018-06-10', name: 'Konsert på Kvennøya'},
 	{ date: '2018-02-24', name: 'Afterski i Vinterland, Lifjell', info: 'Ugras spelar i kaféen ved alpinanlegget i Vinterland',
 	links: [
