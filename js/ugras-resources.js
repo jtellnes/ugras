@@ -5,7 +5,7 @@ var ugrasConcerts = [
 	{ date: '2018-06-30', name: 'Åpen Låve konsertserier, Gjerstad' },
 	{ date: '2018-06-10', name: 'Konsert på Kvennøya' },
 	{ date: '2018-05-19', name: 'Reza sportsbar på Ulefoss' },
-	{ date: '2018-04-07', name: 'Donk på Svendseid' },
+	{ date: '2018-04-07', name: 'Donk på Svenseid' },
 	{ date: '2018-02-24', name: 'Afterski i Vinterland, Lifjell', info: 'Ugras spelar i kaféen ved alpinanlegget i Vinterland',
 	links: [
 		 { title: 'Lifjell Skisenter sin nettstad', url: "http://lifjell.no" },
