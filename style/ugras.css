@@ -72,6 +72,10 @@ audio {
 	border: 1px solid #222222;
 }
 
+.concert-description {
+	white-space: pre-wrap;
+}
+
 .songlist {	
 	min-height: 30px;
 	padding: 2px 10%;

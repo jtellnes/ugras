@@ -5,7 +5,7 @@ Vue.component('concerts', {
 
     data: function() {
         return {
-            concerts: null,
+            concerts: [],
             nextConcert: null,
             listIsLimited: true,
             dateTest: new Date()
@@ -17,13 +17,22 @@ Vue.component('concerts', {
         },
     },
     created: function() {
-        this.concerts = ugrasConcerts.sort(function(a, b) {
-            return new Date(a.date).getTime() - new Date(b.date).getTime();
-        });
+
+        axios.get('https://www.flowgig.com/api/bands/1/gigs').then(function (response) {
+
+            var flowGigGigs = response.data.data;
+
+            this.concerts = flowGigGigs.sort(function(a, b) {
+                return new Date(a.date).getTime() - new Date(b.date).getTime();
+            });
+
+            // Depends on compability.js on some plattforms
+            this.nextConcert = this.concerts.concat().find(function(concert) {
+                return new Date(concert.date) > new Date().setHours(0,0,0,0);
+            });
         
-        // Depends on compability.js on some plattforms
-        this.nextConcert = this.concerts.concat().find(function(concert) {
-            return new Date(concert.date) > new Date().setHours(0,0,0,0);
+        }.bind(this)).catch(function (error) {
+            console.log(error);
         });
     },
     methods: {
@@ -81,7 +90,7 @@ Vue.component('concerts', {
                     return this.concert == this.$parent.nextConcert;
                 },
                 toggleShowMore: function() {
-                    if(this.concert.info)
+                    if(this.concert.description)
                         this.showMore = !this.showMore;
                 },
 
