@@ -5,6 +5,8 @@ var ugrasConcerts = [
 		 { title: 'Lifjell Skisenter sin nettstad', url: "http://lifjell.no" },
 	], },
 	{ date: '2018-12-29', name: '5. juledag på Lundevang' },
+	{ date: '2018-09-14', name: 'Turbotråkk, Evjudalen',
+	  info: "Eit opplegg for barnehagane i regi av DNT Telemark", links: [ { title: 'Turbotråkk 2018', url: "https://telemark.dnt.no/aktiviteter/101026/859668/"} ] },
 	{ date: '2018-08-24', name: 'Kartfestivalen 2018' },
 	{ date: '2018-06-30', name: 'Åpen Låve konsertserier, Gjerstad' },
 	{ date: '2018-06-10', name: 'Konsert på Kvennøya' },
