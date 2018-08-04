@@ -1,13 +1,7 @@
-/*
-column {
-	border: 1px dotted gray;
-}
-*/
-
-body, textarea, h3, pre {
+body, textarea, pre {
 	background-color: black;
 	color: #bababa;
-	font-family: verdana;
+	font-family: Verdana, Geneva, sans-serif;
 }
 
 a {
@@ -26,8 +20,13 @@ a:hover {
 	cursor: hand;
 }
 
-pre {
-	padding: 0px;
+.to-top-link {
+	float: right;
+}
+
+.bottom-info {
+	margin: 50px auto 45px;
+	text-align: center;
 }
 
 audio {
@@ -67,9 +66,14 @@ audio {
 }
 
 .concert {	
-	padding: 5px;
+	padding: 10px;
 	border-radius: 3px;
 	border: 1px solid #222222;
+	margin: 0 0 -20px;
+}
+
+.concert-description {
+	white-space: pre-wrap;
 }
 
 .concert-description {
@@ -131,12 +135,13 @@ audio {
 	/*text-decoration: line-through;*/
 }
 
-.nextConvert {
+.nextConcert {
 	border-top: 3px;
 }
 
 .lyrics {
 	padding: 0px;
+	font-family: "Times New Roman", Times, serif;
 	/*max-height: 300px;*/
 	/*overflow: hidden;*/
 }
@@ -179,6 +184,7 @@ audio {
 	height: 40px;
 	text-align: center;
 	border-style: solid;
+	border-width: 0px;
 	border-right-width: 1px;
 	border-color: #202020;
 	font-size: 1.2em;
@@ -190,7 +196,7 @@ audio {
 }
 
 .music-player .player-soundcloud-logo {
-	padding: 11px 0px 0px 11px;
+	padding: 6px 0px 0px 11px;
 	float: left;
 	opacity: 0.6;
 }
@@ -205,18 +211,14 @@ audio {
 	white-space: nowrap;
 }
 
-.contacts tr {
+.contacts td {
 	border-width: 1px 0px;
     border-style: solid;
 	border-color: #202020;
+	padding: 2px;
 }
 
 .contacts caption {
 	color: inherit;
 	margin-bottom: 5px;
-}
-
-/* Override kube.css */
-row column[cols] {
-   margin-bottom: 4px;
 }
