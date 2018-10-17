@@ -83,32 +83,15 @@
 	</script>
 
 <script type="text/html-template" id="concert">
-		<div class="is-row concert" id="konsert-{{ concert.date }}" v-bind:class="isPast() ? 'past' : 'future'" v-bind:class="{ 'nextConcert' : isNext() }">
-			<div class="is-col is-100">
-				<div class="is-row clickable" @click="toggleShowMore()" v-bind:class="{ 'end': !showMore }">
-					<div class="is-col is-42">
-						<b>{{ formattedDate }}</b>
-						<span v-if="concert.venue"> - {{ concert.venue }}</span><span v-if="concert.location"><span v-if="concert.venue">,</span><span v-else="concert.location"> - </span> {{ concert.location }}</span>
-					</div>
-					<div class="is-col is-25">{{ concert.event }}
-						<!--<span v-show="isNext()" class="label label-success" outline bold>Neste</span>-->
-					</div>
-					<div class="is-col is-8">
-						<a v-if="showMore"><span class="is-small">Lat att</span> <span class="fa fa-angle-double-up" title="Lat att"></span></a>
-						<a v-if="concert.description && !showMore"><span class="is-small">Meir</span> <span class="fa fa-angle-double-down" title="Vis meir"></span></a>
-					</div>
-				</div>
-				<div class="is-row" v-show="showMore">
-					<div class="is-col is-100">
-						<div class="is-row">
-							<div class="is-col is-100">
-								<span class="concert-description">{{ concert.description }}</span>
-								<span class="is-small" v-if="isPast()"><i>(For {{ timeSinceConcert() }} dagar sidan)</i></span>
-								<span class="is-small" v-else><i>(Om {{ timeToConcert() }} dagar)</i></span>
-							</div>
-						</div>
-				</div>
+		<div class="is-row concert is-gapless" id="konsert-{{ concert.date }}" v-bind:class="isPast() ? 'past' : 'future'">
+			<div class="is-col">
+				<span v-if="isPast()"><b title="For {{ timeSinceConcert() }} dagar sidan">{{ formattedDate }}</b></span>
+				<span v-else><b title="Om {{ timeToConcert() }} dagar">{{ formattedDate }}</b></span>
 			</div>
+			<div class="is-col is-30">{{ concert.venue }}</div>
+			<div class="is-col is-30">{{ concert.location }}</div>
+			<div class="is-col is-35">{{ concert.event }}</div>
+			<div class="is-row">{{ concert.description }}</div>
 		</div>
 </script>
 
