@@ -1,9 +1,11 @@
 
 var ugrasConcerts = [
+	{ date: '2019-03-09', name: 'På cruise med Byting, Oslo-Fredrikshavn ' },
 	{ date: '2019-02-23', name: 'Afterski i Vinterland, Lifjell', info: 'Ugras spelar i kaféen ved alpinanlegget i Vinterland',
 	links: [
 		 { title: 'Lifjell Skisenter sin nettstad', url: "http://lifjell.no" },
 	], },
+	{ date: '2018-12-27', name: '3. juledag på Bull Inn' },
 	{ date: '2018-09-14', name: 'Turbotråkk, Evjudalen',
 	  info: "Eit opplegg for barnehagane i regi av DNT Telemark", links: [ { title: 'Turbotråkk 2018', url: "https://telemark.dnt.no/aktiviteter/101026/859668/"} ] },
 	{ date: '2018-08-24', name: 'Kartfestivalen 2018',
