@@ -18,8 +18,8 @@ Vue.component('concerts', {
     },
     created: function() {
 
-        axios.get('https://www.flowgig.com/api/bands/1/gigs').then(function (response) {
-
+        //axios.get('https://www.flowgig.com/api/bands/1/gigs').then(function (response) {
+        axios.get('tmp-static-gig-source.json').then(function (response) {
             var flowGigGigs = response.data.data;
 
             this.concerts = flowGigGigs.sort(function(a, b) {
